@@ -21,37 +21,18 @@
 		<div id="content">
 		
 			<table>
+			
 				<tr>
 					<th>Stock Symbols</th>
-				</tr>
-				
-				<c:forEach var="tempStock" items="${stocks}">
-				
-					<tr>
-						<td> ${tempStock.symbol} </td>
-					</tr>
-				
-				</c:forEach>
-				
-				<tr>
 					<th>Stock Names</th>
-				</tr>
-				
-				<c:forEach var="tempStock" items="${stocks}">
-				
-					<tr>
-						<td> ${tempStock.name} </td>
-					</tr>
-				
-				</c:forEach>
-				
-				<tr>
 					<th>Price</th>
 				</tr>
 				
 				<c:forEach var="tempStock" items="${stocks}">
 				
 					<tr>
+						<td> ${tempStock.symbol} </td>
+						<td> ${tempStock.name} </td>
 						<td> ${tempStock.price} </td>
 					</tr>
 				
