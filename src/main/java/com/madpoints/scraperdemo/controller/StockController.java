@@ -24,12 +24,14 @@ public class StockController {
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://www.finance.yahoo.com/most-active");
 		
-		WebElement stockTableElement = driver.findElement(By.xpath("//table[@data-reactid='73']"));
-		List<Stock> stocks = setWebElementToStock(stockTableElement);
+//		WebElement stockTableElement = driver.findElement(By.xpath("//table[@data-reactid='73']"));
+//		List<Stock> stocks = setWebElementToStock(stockTableElement);
+//		
+//		for (Stock stock : stocks) {
+//			System.out.println(stock.toString());
+//		}
 		
-		for (Stock stock : stocks) {
-			System.out.println(stock.toString());
-		}
+		List<Stock> stocks = setStocks(driver);
 		
 		theModel.addAttribute("stocks", stocks);
 		
@@ -55,6 +57,52 @@ public class StockController {
 			tempStock.setSymbol(stockSymbol.getText());
 			stocks.add(tempStock);
 		}
+	}
+	
+	public static List<Stock> setStocks(WebDriver driver) {
+		
+		List<WebElement> stockSymbolElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Symbol']"));
+		List<WebElement> stockNameElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Name']"));
+		List<WebElement> stockPriceElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Price (Intraday)']"));
+		
+		List<Stock> stocks = new ArrayList<Stock>();
+		
+		int size = stockSymbolElements.size();
+		int listIndex = 0;
+		
+		for (int index = 0; index < size; index++) {
+			
+			Stock tempStock = new Stock();
+			stocks.add(index, tempStock);
+			
+		}
+		
+		for (WebElement stockSymbolElement : stockSymbolElements) {
+			
+			stocks.get(listIndex).setSymbol(stockSymbolElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockNameElement : stockNameElements) {
+			
+			stocks.get(listIndex).setName(stockNameElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockPriceElement : stockPriceElements) {
+			
+			stocks.get(listIndex).setPrice(stockPriceElement.getText());
+			listIndex++;
+			
+		}
+		
+		return stocks;
 	}
 
 }

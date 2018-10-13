@@ -25,11 +25,34 @@
 					<th>Stock Symbols</th>
 				</tr>
 				
-				<!-- loop over and print our customers -->
 				<c:forEach var="tempStock" items="${stocks}">
 				
 					<tr>
 						<td> ${tempStock.symbol} </td>
+					</tr>
+				
+				</c:forEach>
+				
+				<tr>
+					<th>Stock Names</th>
+				</tr>
+				
+				<c:forEach var="tempStock" items="${stocks}">
+				
+					<tr>
+						<td> ${tempStock.name} </td>
+					</tr>
+				
+				</c:forEach>
+				
+				<tr>
+					<th>Price</th>
+				</tr>
+				
+				<c:forEach var="tempStock" items="${stocks}">
+				
+					<tr>
+						<td> ${tempStock.price} </td>
 					</tr>
 				
 				</c:forEach>
