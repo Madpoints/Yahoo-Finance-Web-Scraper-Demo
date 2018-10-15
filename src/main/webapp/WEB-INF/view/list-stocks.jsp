@@ -35,6 +35,11 @@
 						<td> ${tempStock.name} </td>
 						<td> ${tempStock.price} </td>
 					</tr>
+					
+					<!-- construct an "update" link with customer id -->
+					<c:url var="stockLink" value="/stocks/showDetails">
+						<c:param name="stock" value="${tempStock}" />
+					</c:url>
 				
 				</c:forEach>
 						
