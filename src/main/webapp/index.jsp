@@ -1,1 +1,1 @@
-<% response.sendRedirect("stocks"); %>
+<% response.sendRedirect("stocks/list"); %>
