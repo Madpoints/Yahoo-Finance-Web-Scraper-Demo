@@ -30,16 +30,19 @@
 				
 				<c:forEach var="tempStock" items="${stocks}">
 				
+					<c:url var="stockInfoLink" value="/stocks/info">
+						<c:param name="stock" value="${tempStock}" />
+					</c:url>
+				
 					<tr>
 						<td> ${tempStock.symbol} </td>
 						<td> ${tempStock.name} </td>
 						<td> ${tempStock.price} </td>
+						
+						<td>
+							<a href="${stockInfoLink}">More info</a>
+						</td>					
 					</tr>
-					
-					<!-- construct an "update" link with customer id -->
-					<c:url var="stockLink" value="/stocks/showDetails">
-						<c:param name="stock" value="${tempStock}" />
-					</c:url>
 				
 				</c:forEach>
 						
