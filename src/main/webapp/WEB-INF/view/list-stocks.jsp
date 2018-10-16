@@ -31,7 +31,7 @@
 				<c:forEach var="tempStock" items="${stocks}">
 				
 					<c:url var="stockInfoLink" value="/stocks/info">
-						<c:param name="stock" value="${tempStock}" />
+						<c:param name="stock" value="${tempStock.info}" />
 					</c:url>
 				
 					<tr>
