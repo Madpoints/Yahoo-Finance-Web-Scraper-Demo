@@ -5,6 +5,7 @@ public class Stock {
 	private String symbol;
 	private String name;
 	private String price;
+	private String info = "";
 	
 	public Stock() {
 	}
@@ -39,6 +40,10 @@ public class Stock {
 		this.price = price;
 	}
 
+	public String getInfo() {
+		return info + " " + symbol + " " + name + " " + price;
+	}
+	
 	@Override
 	public String toString() {
 		return "Stock [symbol= " + symbol + ", name= " + name + ", price= " + price + "]";
