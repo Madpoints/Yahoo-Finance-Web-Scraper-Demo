@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.madpoints.scraperdemo.entity.Stock;
 import com.madpoints.scraperdemo.service.StockService;
@@ -26,6 +27,14 @@ public class StockController {
 		theModel.addAttribute("stocks", stocks);
 		
 		return "list-stocks";
+	}
+	
+	@GetMapping("/info")
+	public String showInfo(@RequestParam("stock") String stockInfo, Model theModel) {
+		
+		theModel.addAttribute("stock", stockInfo);
+		
+		return "stock-info";
 	}
 	
 }
