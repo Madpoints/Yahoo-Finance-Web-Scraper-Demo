@@ -23,8 +23,8 @@
 			<table>
 			
 				<tr>
-					<th>Stock Symbols</th>
-					<th>Stock Names</th>
+					<th>Stock Symbol</th>
+					<th>Stock Name</th>
 					<th>Price</th>
 				</tr>
 				
