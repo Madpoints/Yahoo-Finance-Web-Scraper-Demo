@@ -23,6 +23,8 @@ public class StockService {
 		
 		List<Stock> stocks = setStocks(driver);
 		
+		driver.quit();
+		
 		return stocks;
 	}
 	

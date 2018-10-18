@@ -5,7 +5,14 @@ public class Stock {
 	private String symbol;
 	private String name;
 	private String price;
-	private String info = "";
+	private String change;
+	private String percentChange;
+	private String volume;
+	private String avgVolume;
+	private String marketCap;
+	private String peRatio;
+	
+	private String info;
 	
 	public Stock() {
 	}
@@ -40,7 +47,60 @@ public class Stock {
 		this.price = price;
 	}
 
+	public String getChange() {
+		return change;
+	}
+
+	public void setChange(String change) {
+		this.change = change;
+	}
+
+	public String getPercentChange() {
+		return percentChange;
+	}
+
+	public void setPercentChange(String percentChange) {
+		this.percentChange = percentChange;
+	}
+
+	public String getVolume() {
+		return volume;
+	}
+
+	public void setVolume(String volume) {
+		this.volume = volume;
+	}
+
+	public String getAvgVolume() {
+		return avgVolume;
+	}
+
+	public void setAvgVolume(String avgVolume) {
+		this.avgVolume = avgVolume;
+	}
+
+	public String getMarketCap() {
+		return marketCap;
+	}
+
+	public void setMarketCap(String marketCap) {
+		this.marketCap = marketCap;
+	}
+
+	public String getPeRatio() {
+		return peRatio;
+	}
+
+	public void setPeRatio(String peRatio) {
+		this.peRatio = peRatio;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
+	}
+
 	public String getInfo() {
+		
 		return info + " " + symbol + " " + name + " " + price;
 	}
 	

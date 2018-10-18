@@ -20,7 +20,9 @@
 	
 		<div id="content">
 		
-			<p>${stock}</p>
+			<p>${stockSymbol}</p>
+			<p>${stockName}</p>
+			<p>${stockPrice}</p>
 		
 		</div>
 		

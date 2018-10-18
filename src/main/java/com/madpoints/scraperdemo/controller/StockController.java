@@ -30,9 +30,11 @@ public class StockController {
 	}
 	
 	@GetMapping("/info")
-	public String showInfo(@RequestParam("stock") String stockInfo, Model theModel) {
+	public String showInfo(@RequestParam("stockSymbol") String stockSymbol, 
+							@RequestParam("stockName") String stockName, Model theModel) {
 		
-		theModel.addAttribute("stock", stockInfo);
+		theModel.addAttribute("stockSymbol", stockSymbol);
+		theModel.addAttribute("stockName", stockName);
 		
 		return "stock-info";
 	}
