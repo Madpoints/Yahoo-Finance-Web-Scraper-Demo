@@ -17,10 +17,9 @@ public class Stock {
 	public Stock() {
 	}
 
-	public Stock(String symbol, String name, String price) {
+	public Stock(String symbol, String name) {
 		this.symbol = symbol;
 		this.name = name;
-		this.price = price;
 	}
 
 	public String getSymbol() {
