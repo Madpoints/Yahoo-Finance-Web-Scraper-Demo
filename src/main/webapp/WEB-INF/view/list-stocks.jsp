@@ -34,6 +34,12 @@
 						<c:param name="stockSymbol" value="${tempStock.symbol}" />
 						<c:param name="stockName" value="${tempStock.name}" />
 						<c:param name="stockPrice" value="${tempStock.price}" />
+						<c:param name="change" value="${tempStock.change}" />
+						<c:param name="percentChange" value="${tempStock.percentChange}" />
+						<c:param name="volume" value="${tempStock.volume}" />
+						<c:param name="avgVolume" value="${tempStock.avgVolume}" />
+						<c:param name="marketCap" value="${tempStock.marketCap}" />
+						<c:param name="peRatio" value="${tempStock.peRatio}" />
 					</c:url>
 				
 					<tr>
