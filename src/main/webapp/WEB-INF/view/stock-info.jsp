@@ -20,9 +20,23 @@
 	
 		<div id="content">
 		
-			<p>${stockSymbol}</p>
-			<p>${stockName}</p>
-			<p>${stockPrice}</p>
+			<table>
+			
+				<tr>
+					<th>Symbol</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Change</th>
+				</tr>
+				
+				<tr>
+					<td>${stockSymbol}</td>
+					<td>${stockName}</td>
+					<td>${stockPrice}</td>
+					<td>${change}</td>
+				</tr>
+				
+			</table>
 		
 		</div>
 		
