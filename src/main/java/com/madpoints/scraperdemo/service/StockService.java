@@ -34,6 +34,13 @@ public class StockService {
 		List<WebElement> stockNameElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Name']"));
 		List<WebElement> stockPriceElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Price (Intraday)']"));
 		List<WebElement> stockChangeElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Change']"));
+		List<WebElement> stockPercentChangeElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='% Change']"));
+		List<WebElement> stockVolumeElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Volume']"));
+		List<WebElement> stockAvgVolumeElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Avg Vol (3 month)']"));
+		List<WebElement> stockMarketCapElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Market Cap']"));
+		List<WebElement> stockPeRatioElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='PE Ration (TTM)']"));
+
+
 		
 		List<Stock> stocks = new ArrayList<Stock>();
 		
@@ -77,6 +84,51 @@ public class StockService {
 		for (WebElement stockChangeElement : stockChangeElements) {
 			
 			stocks.get(listIndex).setChange(stockChangeElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockPercentChangeElement : stockPercentChangeElements) {
+			
+			stocks.get(listIndex).setPercentChange(stockPercentChangeElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockVolumeElement : stockVolumeElements) {
+			
+			stocks.get(listIndex).setVolume(stockVolumeElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockAvgVolumeElement : stockAvgVolumeElements) {
+			
+			stocks.get(listIndex).setAvgVolume(stockAvgVolumeElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockMarketCapElement : stockMarketCapElements) {
+			
+			stocks.get(listIndex).setMarketCap(stockMarketCapElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockPeRatioElement : stockPeRatioElements) {
+			
+			stocks.get(listIndex).setPeRatio(stockPeRatioElement.getText());
 			listIndex++;
 			
 		}
