@@ -31,10 +31,15 @@ public class StockController {
 	
 	@GetMapping("/info")
 	public String showInfo(@RequestParam("stockSymbol") String stockSymbol, 
-							@RequestParam("stockName") String stockName, Model theModel) {
+							@RequestParam("stockName") String stockName,
+							@RequestParam("stockPrice") String stockPrice,
+							@RequestParam("change") String change,
+							Model theModel) {
 		
 		theModel.addAttribute("stockSymbol", stockSymbol);
 		theModel.addAttribute("stockName", stockName);
+		theModel.addAttribute("stockPrice", stockPrice);
+		theModel.addAttribute("change", change);
 		
 		return "stock-info";
 	}
