@@ -33,6 +33,7 @@ public class StockService {
 		List<WebElement> stockSymbolElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Symbol']"));
 		List<WebElement> stockNameElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Name']"));
 		List<WebElement> stockPriceElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Price (Intraday)']"));
+		List<WebElement> stockChangeElements = driver.findElements(By.xpath("//table[@data-reactid='73']//td[@aria-label='Change']"));
 		
 		List<Stock> stocks = new ArrayList<Stock>();
 		
@@ -67,6 +68,15 @@ public class StockService {
 		for (WebElement stockPriceElement : stockPriceElements) {
 			
 			stocks.get(listIndex).setPrice(stockPriceElement.getText());
+			listIndex++;
+			
+		}
+		
+		listIndex = 0;
+		
+		for (WebElement stockChangeElement : stockChangeElements) {
+			
+			stocks.get(listIndex).setChange(stockChangeElement.getText());
 			listIndex++;
 			
 		}
