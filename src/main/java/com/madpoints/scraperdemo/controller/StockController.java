@@ -34,12 +34,22 @@ public class StockController {
 							@RequestParam("stockName") String stockName,
 							@RequestParam("stockPrice") String stockPrice,
 							@RequestParam("change") String change,
+							@RequestParam("percentChange") String percentChange,
+							@RequestParam("volume") String volume,
+							@RequestParam("avgVolume") String avgVolume,
+							@RequestParam("marketCap") String marketCap,
+							@RequestParam("peRatio") String peRatio,
 							Model theModel) {
 		
 		theModel.addAttribute("stockSymbol", stockSymbol);
 		theModel.addAttribute("stockName", stockName);
 		theModel.addAttribute("stockPrice", stockPrice);
 		theModel.addAttribute("change", change);
+		theModel.addAttribute("percentChange", percentChange);
+		theModel.addAttribute("volume", volume);
+		theModel.addAttribute("avgVolume", avgVolume);
+		theModel.addAttribute("marketCap", marketCap);
+		theModel.addAttribute("peRatio", peRatio);
 		
 		return "stock-info";
 	}
