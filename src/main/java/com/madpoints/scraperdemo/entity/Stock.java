@@ -12,8 +12,6 @@ public class Stock {
 	private String marketCap;
 	private String peRatio;
 	
-	private String info;
-	
 	public Stock() {
 	}
 
@@ -94,15 +92,6 @@ public class Stock {
 		this.peRatio = peRatio;
 	}
 
-	public void setInfo(String info) {
-		this.info = info;
-	}
-
-	public String getInfo() {
-		
-		return info + " " + symbol + " " + name + " " + price;
-	}
-	
 	@Override
 	public String toString() {
 		return "Stock [symbol= " + symbol + ", name= " + name + ", price= " + price + "]";
